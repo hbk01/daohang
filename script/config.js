@@ -1,7 +1,7 @@
 var config = {
     "debug": true, // 输出日志信息到控制台
-    "theme": "default dark", // 引用colorscheme中的字段
     "help_search": true, // 为true时使用定义好的搜索参数
+    "theme": "default dark", // 引用colorscheme中的字段
 
     "engine": {//{{{
         "index": 2, // 使用搜索引擎列表中的哪个搜索引擎，1 为第一个

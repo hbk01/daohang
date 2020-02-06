@@ -2,9 +2,10 @@ var engine_now;
 var translate_engine_now;
 
 window.onload = function () {
-    
+    // 加载配置文件中的onload方法
     config.onload();
 
+    // 初始化搜索引擎、翻译、快捷键
     init();
 
     // load theme
@@ -19,8 +20,6 @@ window.onload = function () {
     }
 
     document.getElementsByTagName("head")[0].appendChild(link);
-
-
 
     // 加载搜索引擎logo
     // var search_image = document.getElementsByClassName("search-image")[0];
@@ -52,7 +51,6 @@ window.onload = function () {
     });
 };
 
-
 function init() {
     engine_now = config.engine.list[config.engine.index - 1];
     translate_engine_now = config.engine.translate[config.engine.trans_index - 1];
@@ -65,17 +63,18 @@ function init() {
     }
 }
 
-
-
 /**
  * 搜索
  */
 function search() {
     // 获取输入文本
     var text = document.getElementsByClassName("input")[0].value;
-    if (text != "") {
-        // 是否要添加搜索参数
-        if (config.help_search && text.indexOf(" ") > 0) {
+    if (text == "") {
+        return;
+    }
+    // 是否要添加搜索参数
+    if (config.help_search) {
+        if (text.indexOf(" ") > 0) {
             var lang = text.substring(0, text.indexOf(" "));
             var inlist = [
                 "java",
@@ -93,6 +92,7 @@ function search() {
                 "Linux",
                 "win",
                 "win10",
+                "git"
             ];
 
             inlist.forEach(value => {
@@ -100,16 +100,19 @@ function search() {
                     text = text.replace(lang, "\"" + lang + "\"");
                 }
             });
-            text = "-baidu AND -csdn " + text;
-        }
 
-        // 解析搜索链接
-        var url = engine_now.url.replace("${word}", text);
-        if (config.debug) {
-            console.log("search [" + text + "] use [" + engine_now.title + "]; url=" + url);
         }
-        window.open(url);
+        // 去除百度及csdn的搜索结果
+        text = "-baidu AND -csdn " + text;
     }
+
+    // 拼接搜索链接
+    var url = engine_now.url.replace("${word}", text);
+    if (config.debug) {
+        console.log("search [" + text + "] use [" + engine_now.title + "]; url=" + url);
+    }
+    window.open(url);
+
 }
 
 function trans() {
