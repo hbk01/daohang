@@ -76,26 +76,8 @@ function search() {
     if (config.help_search) {
         if (text.indexOf(" ") > 0) {
             var lang = text.substring(0, text.indexOf(" "));
-            var inlist = [
-                "java",
-                "python",
-                "c",
-                "c++",
-                "js",
-                "javascript",
-                "html",
-                "css",
-                "pycharm",
-                "vim",
-                "shell",
-                "linux",
-                "Linux",
-                "win",
-                "win10",
-                "git"
-            ];
 
-            inlist.forEach(value => {
+            config.keyList.forEach(value => {
                 if (value == lang) {
                     text = text.replace(lang, "\"" + lang + "\"");
                 }

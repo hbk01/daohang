@@ -67,6 +67,26 @@ var config = {
         "default dark": "default_dark",
         "default light": "default_light"
     },
+    // key will be 'key'
+    "keyList": [
+        "java",
+        "python",
+        "c",
+        "c++",
+        "js",
+        "javascript",
+        "html",
+        "css",
+        "pycharm",
+        "vim",
+        "shell",
+        "linux",
+        "Linux",
+        "win",
+        "win10",
+        "git",
+        "android"
+    ], 
 
     // The function will run in window.onload
     "onload": function () {
