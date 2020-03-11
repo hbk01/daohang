@@ -1,7 +1,7 @@
 var config = {
-    "debug": true, // 输出日志信息到控制台
+    "debug": false, // 输出日志信息到控制台
     "help_search": true, // 为true时使用定义好的搜索参数
-    "theme": "default dark", // 引用colorscheme中的字段
+    "theme": "default light", // 引用colorscheme中的字段
 
     "engine": {//{{{
         "index": 2, // 使用搜索引擎列表中的哪个搜索引擎，1 为第一个
@@ -51,6 +51,11 @@ var config = {
             "image": "https://github.com/favicon.ico"
         },
         {
+            "title": "Gitee",
+            "url": "https://gitee.com",
+            "image": "https://gitee.com/logo-black.svg?t=158106664"
+        },
+        {
             "title": "谷歌翻译",
             "url": "https://translate.google.cn/",
             "image": "https://translate.google.cn/favicon.ico"
@@ -62,12 +67,13 @@ var config = {
         }
     ],//}}}
 
-    "colorscheme": {
+    "colorscheme": {//{{{
         // theme name, theme file name
         "default dark": "default_dark",
         "default light": "default_light"
-    },
-    // key will be 'key'
+    },//}}}
+
+    // key will be 'key'{{{
     "keyList": [
         "java",
         "python",
@@ -86,7 +92,7 @@ var config = {
         "win10",
         "git",
         "android"
-    ], 
+    ], //}}}
 
     // The function will run in window.onload
     "onload": function () {
