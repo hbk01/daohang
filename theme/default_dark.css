@@ -30,6 +30,7 @@ li {
     font-size: 16px;
     padding: 5px 5px;
     line-height: 21px;
+    outline-color: #ff0000;
 }
 
 .btn {
@@ -37,6 +38,45 @@ li {
     height: 35px;
     line-height: 21px;
     margin-left: 10px;
+    background-color: white;
+    border-style: ridge;
+    border-width: 1px;
+    animation: hl-b2w 500ms;
+}
+
+.btn:hover {
+    font-size: 16px;
+    height: 35px;
+    line-height: 21px;
+    margin-left: 10px;
+    border-style: ridge;
+    color: white;
+    background-color: black;
+    border-width: 1px;
+    border-color: white;
+    animation: hl-w2b 500ms;
+}
+
+@keyframes hl-b2w {
+    from {
+        background-color: black;
+        color: white;
+    }
+    to {
+        background-color: white;
+        color: black;
+    }
+}
+
+@keyframes hl-w2b {
+    from {
+        background-color: white;
+        color: black;
+    }
+    to {
+        background-color: black;
+        color: white;
+    }
 }
 
 .website {
@@ -48,26 +88,18 @@ li {
 
 .site {
     width: 64px;
-    height: 92px;
+    height: 64px;
     cursor: pointer;
     text-align: center;
     padding: 10px 10px 10px 10px;
 }
 
-.site:hover .name {
-    color: #ff6b81;
+.site:hover {
     cursor: pointer;
-    animation: -highlight 300ms;
-}
-
-@keyframes -highlight {
-    from {
-        /* color: white; */
-    }
-
-    to {
-        color: #ff6b81;
-    }
+    outline-style: ridge;
+    outline-width: 1px;
+    outline-color: #ff6b81;
+    border-width: 1px;
 }
 
 .image {
@@ -77,5 +109,6 @@ li {
 
 .name {
     font-size: 14px;
+    margin-top: 5px;
     text-align: center;
 }

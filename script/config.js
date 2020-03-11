@@ -1,7 +1,7 @@
 var config = {
     "debug": false, // 输出日志信息到控制台
     "help_search": true, // 为true时使用定义好的搜索参数
-    "theme": "default light", // 引用colorscheme中的字段
+    "theme": "default dark", // 引用colorscheme中的字段
 
     "engine": {//{{{
         "index": 2, // 使用搜索引擎列表中的哪个搜索引擎，1 为第一个
@@ -38,32 +38,32 @@ var config = {
         {
             "title": "哔哩哔哩",
             "url": "https://bilibili.com",
-            "image": "https://bilibili.com/favicon.ico"
+            "image": "class:fa-youtube-play"
         },
         {
             "title": "知乎",
             "url": "https://www.zhihu.com",
-            "image": "https://www.zhihu.com/favicon.ico"
+            "image": "class:fa-file-text-o"
         },
         {
             "title": "GitHub",
             "url": "https://github.com",
-            "image": "https://github.com/favicon.ico"
+            "image": "class:fa-github"
         },
         {
             "title": "Gitee",
             "url": "https://gitee.com",
-            "image": "https://gitee.com/logo-black.svg?t=158106664"
+            "image": "class:fa-git-square"
         },
         {
             "title": "谷歌翻译",
             "url": "https://translate.google.cn/",
-            "image": "https://translate.google.cn/favicon.ico"
+            "image": "class:fa-google"
         },
         {
             "title": "腾讯视频",
             "url": "https://v.qq.com/",
-            "image": "http://img.25pp.com/uploadfile/app/icon/20161130/1480498815467743.jpg"
+            "image": "class:fa-film"
         }
     ],//}}}
 

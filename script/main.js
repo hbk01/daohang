@@ -151,7 +151,7 @@ function clearText() {
 function addWebsite(title, url, image) {
     if (config.debug) {
         console.log("add-website: " + title + ", " + url + ", " + image);
-    }
+     }
     var website = document.getElementsByClassName("website")[0];
 
     var li = document.createElement("li");
@@ -160,9 +160,14 @@ function addWebsite(title, url, image) {
     div.className = "site";
     div.setAttribute("onclick", "goto(this)");
 
-    var img = document.createElement("img");
-    img.className = "image";
-    img.src = image;
+    if (image.startsWith("class:")){
+        var i = document.createElement("i");
+        i.className = "fa " + image.substring(6, image.length) + " fa-2x";
+    } else {
+        var img = document.createElement("img");
+        img.className = "image";
+        img.src = image;
+    }
 
     var name = document.createElement("div");
     name.className = "name";
@@ -171,6 +176,12 @@ function addWebsite(title, url, image) {
 
     website.appendChild(li);
     li.appendChild(div);
-    div.appendChild(img);
+
+    if (img == null){
+        div.appendChild(i);
+    } else {
+        div.appendChild(img);
+    }
+    
     div.appendChild(name);
 }
