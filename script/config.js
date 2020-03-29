@@ -1,7 +1,7 @@
 var config = {
     "debug": false, // 输出日志信息到控制台
     "help_search": true, // 为true时使用定义好的搜索参数
-    "theme": "default dark", // 引用colorscheme中的字段
+    "theme": "default light", // 引用colorscheme中的字段
 
     "engine": {//{{{
         "index": 2, // 使用搜索引擎列表中的哪个搜索引擎，1 为第一个
@@ -27,6 +27,11 @@ var config = {
                 "title": "Bing",
                 "url": "https://cn.bing.com/search?q=${word}",
                 "image": "https://cn.bing.com/favicon.ico"
+            },
+            {
+                "title": "Google",
+                "url": "https://www.google.com/search?q=${word}",
+                "image": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
             }
         ]
     },//}}}
@@ -98,5 +103,9 @@ var config = {
     "onload": function () {
         // document.getElementsByClassName("title")[0].innerText = "小爱同学";
         console.log("hello");
+        if (navigator.platform.toLowerCase() == "win32") {
+            // this.engine.index = 3;
+            // this.help_search = false;
+        }
     }
 }
