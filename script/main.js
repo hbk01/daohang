@@ -1,6 +1,3 @@
-var engine_now;
-var translate_engine_now;
-
 window.onload = function () {
     // 加载配置文件中的onload方法
     config.onload();
@@ -151,7 +148,7 @@ function clearText() {
 function addWebsite(title, url, image) {
     if (config.debug) {
         console.log("add-website: " + title + ", " + url + ", " + image);
-     }
+    }
     var website = document.getElementsByClassName("website")[0];
 
     var li = document.createElement("li");
@@ -160,7 +157,7 @@ function addWebsite(title, url, image) {
     div.className = "site";
     div.setAttribute("onclick", "goto(this)");
 
-    if (image.startsWith("class:")){
+    if (image.startsWith("class:")) {
         var i = document.createElement("i");
         i.className = "fa " + image.substring(6, image.length) + " fa-2x";
     } else {
@@ -177,11 +174,11 @@ function addWebsite(title, url, image) {
     website.appendChild(li);
     li.appendChild(div);
 
-    if (img == null){
+    if (img == null) {
         div.appendChild(i);
     } else {
         div.appendChild(img);
     }
-    
+
     div.appendChild(name);
 }

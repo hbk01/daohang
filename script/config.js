@@ -1,7 +1,7 @@
 var config = {
     "debug": false, // 输出日志信息到控制台
     "help_search": true, // 为true时使用定义好的搜索参数
-    "theme": "default light", // 引用colorscheme中的字段
+    "theme": "default dark", // 引用colorscheme中的字段
 
     "engine": {//{{{
         "index": 2, // 使用搜索引擎列表中的哪个搜索引擎，1 为第一个
@@ -103,9 +103,5 @@ var config = {
     "onload": function () {
         // document.getElementsByClassName("title")[0].innerText = "小爱同学";
         console.log("hello");
-        if (navigator.platform.toLowerCase() == "win32") {
-            // this.engine.index = 3;
-            // this.help_search = false;
-        }
     }
 }
